@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task } from './models/taks';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'exampleOne';
+  newTask: Task = {
+    description: 'Ingrese una descripcion',
+    estimate: 0
+  };
+  tasks: Array< Task > = [];
+
+  add(  ): void {
+    this.tasks.push( this.newTask );
+  }
+
 }
